@@ -1,12 +1,21 @@
-import React, { Component } from 'react';
+// @flow
+import * as React from 'react';
 import {ScatterplotChart} from 'react-easy-chart';
+type State ={
+  height:number,
+  width: number
 
-class MainPage extends Component {
-constructor(props) {
+};
+type Props ={
+  chartData:any
+};
+
+class MainPage extends React.Component<Props, State> {
+constructor(props:any) {
   super(props);
   this.state ={ width:900, height:500};
 
-  this.handleResize     = this.handleResize.bind(this);
+  (this:any).handleResize     = this.handleResize.bind(this);
 }
 
 componentDidMount() {

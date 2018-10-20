@@ -1,17 +1,24 @@
-import React, { Component } from 'react';
+// @flow
+import * as React from 'react';
 import axios from 'axios';
 import './App.css';
 import MainPage from './components/MainPage';
 
-class App extends Component {
-  constructor(props) {
+type State ={
+  data:any,
+  value:string
+};
+type Props ={/**/};
+
+class App extends React.Component<Props, State> {
+  constructor(props:any) {
     super(props);
     this.state = {data:'', value:'var001'} ;
 
-    this.handleChange = this.handleChange.bind(this);
+    (this:any).handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(event) {
+  handleChange(event:any) {
   this.setState({value: event.target.value});
 }
 
